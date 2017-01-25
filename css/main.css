@@ -1,0 +1,21 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+button{
+    margin: 1%;
+}
+
+nav, ul li{
+  background-color: #eee;
+}
+
+ul li{
+    text-decoration: none;
+    list-style: none;
+}
+a{
+    margin: 3px 10px;
+    float: right;
+}
