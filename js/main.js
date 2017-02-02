@@ -1,63 +1,31 @@
-    var lista = document.getElementById("lista"); 
-    var texto = document.getElementById("tarea");
-    var nuevaTarea = document.getElementById("añadir");
-    
+/*var listaTareas=[["tarea", true],["t2", false]];
+
+
+//------------
+function drawTasksList()
+{
+    var lista= document.getElementById("lista");
+    for (var i in listaTareas){
+    var html="<li>"+"input type='checkbox'"+(listaTareas[i][1]?"cheked":"")+">"+listaTareas[i][0]+"</li>";
+        lista.innerHTML+=html;
+    }
    
-    nuevaTarea.addEventListener("click",  onButtonClick);
-
+    // var html="<li>"+"listaTareas[i][0]"+"</li>";
     
-    //Funciones
+}*/
 
-    function onButtonClick(evt)
-    {
-     
-        agregarMensaje();
-    }
+var listaTareas=[
+    {nombre:"tarea",isDone:true},
+    {nombre:"t2", isDone:false}
+];
 
-    function agregarMensaje(){
-        
-        if(texto.value === ""|| texto.value.length == 0){
-            alert("kfjdf"); 
-           lista.removeChild(this.parentNode);
-            
-        }
-        
-    var item = document.createElement('li');
-    var span = document.createElement('span');
-    var icon = document.createElement('a');
-    var checking = document.createElement('input');
 
-	span.innerHTML = texto.value;
-    checking.type = "checkbox"; 
-    checking.className = "squaredTwo";
-    checking.style = "margin-right: 5px;";
-    icon.className = "icon-trash estilo"; 
-    item.appendChild(checking);
-	item.appendChild(span);
-    item.appendChild(icon);
-    item.className = "twitter";
-	lista.appendChild(item);
-
-	texto.value = '';
-	texto.focus();
-    
-    
-    checking.addEventListener('click', onTach);
-	icon.addEventListener('click', onItemClick);
-   
-    }
-        
-      function onItemClick(evt)
-    {
-        lista.removeChild(evt.target.parentNode);
-    }
-
-    function onTach(evt)
-    { console.log(evt.target);
-       if(evt.target.checked) {
-        
-           evt.target.nextSibling.style.textDecoration = "line-through";
-       }else{
-           evt.target.nextSibling.style.textDecoration = "none";
-       }
-    }
+//------------
+function drawTasksList()
+{
+    var lista= document.getElementById("lista");
+    for (var i in listaTareas){
+    var html="<li><input type='checkbox'"+(listaTareas[i].isDone?"checked":"")+">"+listaTareas[i].nombre+"</li>";
+        lista.innerHTML+=html;
+    } 
+}
